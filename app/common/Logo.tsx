@@ -2,8 +2,8 @@ import Image from "next/image";
 
 function Logo() {
   return (
-    <div className="flex flex-row gap-2 ">
-      <div className="w-8 h-8">
+    <div className="flex flex-row gap-2 items-center ">
+      <div className="w-12 h-12 flex justify-center items-center rounded-md bg-white p-2">
         <Image
           src={"/logo.png"}
           alt="Company Logo"
