@@ -2,20 +2,18 @@ import { Building } from "lucide-react";
 import { whoWeAre } from "@/app/company_data/about/whoWeAre";
 import DisplayAboutData from "@/app/about/components/DisplayAboutData";
 import Image from "next/image";
+import BaseSection from "../base/BaseSection";
 
 type Props = {
-  handleClick: () => void;
+  handleClick: (link: string) => void;
 };
 
 function AboutSection({ handleClick }: Props) {
   return (
-    <section className="w-full min-h-screen py-5 ">
-      <h1 className="text-yellow-500 font-bold text-4xl text-center">
-        About US
-      </h1>
-      <div className="flex min-h-70 flex-col items-center gap-4 px-8 lg:flex-row lg:items-stretch lg:justify-center">
+    <BaseSection title="About US">
+      <div className="flex min-h-70 flex-col items-center gap-4 lg:px-8 lg:flex-row lg:items-stretch lg:justify-center">
         <div
-          onClick={handleClick}
+          onClick={() => handleClick("/about")}
           className="flex h-full w-full max-w-5xl gap-4 px-2 py-3 lg:w-1/2"
         >
           <DisplayAboutData
@@ -34,7 +32,7 @@ function AboutSection({ handleClick }: Props) {
           />
         </div>
       </div>
-    </section>
+    </BaseSection>
   );
 }
 

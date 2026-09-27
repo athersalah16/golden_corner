@@ -8,7 +8,6 @@ import { NavLinkType } from "@/app/types/header/NavLinkType";
 type Props = { linksStyle: string };
 function NavLinks({ linksStyle }: Props) {
   const { selectedLink } = useExistLink();
-  console.log(selectedLink);
 
   return (
     <div className={`w-full  ${linksStyle}`}>

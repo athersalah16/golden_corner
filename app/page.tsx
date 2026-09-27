@@ -1,9 +1,12 @@
 "use client";
-import HeroSection from "@/app/common/components/HeroSection";
+
 import { useRouter } from "next/navigation";
+
+import HeroSection from "@/app/common/components/HeroSection";
 import AboutSection from "./common/components/AboutSection";
+import ContentShowCase from "./common/ContentShowCase";
 import { companyStrengths } from "./company_data/WhyUS/companyStrengths";
-import DisplayStrengths from "./why-us/components/DisplayStrengths";
+import { objectives } from "./company_data/WhyUS/objectives";
 
 export default function Home() {
   const router = useRouter();
@@ -16,25 +19,30 @@ export default function Home() {
     "Contracting Works",
   ];
 
-  const handleClick = () => {
-    router.push("/about");
+  const handleClick = (link: string) => {
+    router.push(link);
   };
 
   return (
-    <div className="w-full min-h-screen bg-white ">
+    <div className="w-full min-h-screen bg-white">
       <HeroSection />
       <AboutSection handleClick={handleClick} />
-      
-      <section className="w-full min-h-screen py-5 ">
-        <h1 className="text-yellow-500 font-bold text-4xl text-center">
-          Why Golden Corner
-        </h1>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  px-3 py-5 gap-4">
-          {companyStrengths.slice(0, 4).map((strength, index) => (
-            <DisplayStrengths data={strength} key={index + 1} />
-          ))}
-        </div>
-      </section>
+
+      <ContentShowCase
+        title=" Our Objectives"
+        description="   At Golden Corner, our objectives guide our strategy and daily
+          operations, ensuring we deliver value to our clients, partners, and
+          communities."
+        items={objectives.slice(0, 4)}
+        navigateTo="about"
+        onClick={handleClick}
+      />
+      <ContentShowCase
+        title="Why Golden Corner"
+        items={companyStrengths.slice(0, 4)}
+        navigateTo="why-us"
+        onClick={handleClick}
+      />
     </div>
   );
 }
