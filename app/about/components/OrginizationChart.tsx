@@ -2,7 +2,7 @@
 
 import { Tree, TreeNode } from "react-organizational-chart";
 import OrganizationNode from "./OrginizationNode";
-import { OrginizationStructure } from "@/app/company_data/about/organization_structure";
+import { OrginizationStructure } from "@/company_data/about/organization_structure";
 import { getChildren } from "@/app/utils/getChildren";
 
 export default function OrganizationChart() {

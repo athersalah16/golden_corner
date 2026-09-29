@@ -1,18 +1,26 @@
-import BaseContanier from '@/app/common/base/BaseContanier';
-import { AboutDTO } from '@/app/types/about/AboutDTO';
-
-function DisplayData({content,title,icon:Icon}:AboutDTO) {
+import { Building, Lightbulb, LocateFixed } from "lucide-react";
+import { mission, vission } from "@/company_data/about/vissionAndMission";
+import { whoWeAre } from "@/company_data/about/whoWeAre";
+import type { AboutData } from "@/app/types/about/AboutData";
+import DisplayData from "./DisplayData";
+function DisplayAboutData() {
+  const aboutData: AboutData[] = [
+    { title: "Who We Are", content: whoWeAre, icon: Building },
+    { title: "Vission", content: vission, icon: Lightbulb },
+    { title: "Mission", content: mission, icon: LocateFixed },
+  ];
   return (
-    <BaseContanier maxWidth="max-w-3xl">
-      <div className="flex flex-row gap-6">
-        <div className="w-12 h-12 bg-gray-200 text-yellow-500 group-hover:bg-yellow-500 group-hover:text-white  flex justify-center items-center rounded-full ">
-          <Icon />
-        </div>
-        <h1 className=" font-bold  text-3xl">{title}</h1>
-      </div>
-      <p className="text-blue-900 group-hover:text-white hover:cursor-text font-sans">{content}</p>
-    </BaseContanier>
-  )
+    <div className="w-full grid  grid-cols-1 lg:grid-cols-3 gap-4 ">
+      {aboutData.map(({ title, content, icon }, index) => (
+        <DisplayData
+          key={index + 1}
+          title={title}
+          icon={icon}
+          content={content}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default DisplayData
+export default DisplayAboutData;

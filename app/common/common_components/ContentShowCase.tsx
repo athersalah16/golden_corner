@@ -1,5 +1,5 @@
 import type { CompanyStrength } from "@/app/types/WhyUs/CompanyStrengths";
-import BaseSection from "./base/BaseSection";
+import BaseSection from "../base/BaseSection";
 import DisplayContent from "./DisplayContent";
 
 type Props = {

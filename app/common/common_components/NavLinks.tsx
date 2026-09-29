@@ -1,6 +1,6 @@
 "use client";
 
-import { navLinks } from "@/app/company_data/header/navLinks";
+import { navLinks } from "@/company_data/header/navLinks";
 import useExistLink from "@/app/hooks/useExistLink";
 import { NavLinkType } from "@/app/types/header/NavLinkType";
 

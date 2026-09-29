@@ -3,10 +3,10 @@
 import { useRouter } from "next/navigation";
 
 import HeroSection from "@/app/common/components/HeroSection";
-import AboutSection from "./common/components/AboutSection";
-import ContentShowCase from "./common/ContentShowCase";
-import { companyStrengths } from "./company_data/WhyUS/companyStrengths";
-import { objectives } from "./company_data/WhyUS/objectives";
+import AboutSectionInHomePage from "./common/components/AboutSectionInHomePage";
+import ContentShowCase from "./common/common_components/ContentShowCase";
+import { objectives } from "@/company_data/WhyUS/objectives";
+import { companyStrengths } from "@/company_data/WhyUS/companyStrengths";
 
 export default function Home() {
   const router = useRouter();
@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen bg-white">
       <HeroSection />
-      <AboutSection handleClick={handleClick} />
+      <AboutSectionInHomePage handleClick={handleClick} />
 
       <ContentShowCase
         title=" Our Objectives"
@@ -35,6 +35,12 @@ export default function Home() {
           communities."
         items={objectives.slice(0, 4)}
         navigateTo="about"
+        onClick={handleClick}
+      />
+      <ContentShowCase
+        title="Brands We Trust"
+        items={[]}
+        navigateTo="why-us"
         onClick={handleClick}
       />
       <ContentShowCase

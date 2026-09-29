@@ -1,6 +1,6 @@
 import { Building } from "lucide-react";
-import { whoWeAre } from "@/app/company_data/about/whoWeAre";
-import DisplayAboutData from "@/app/about/components/DisplayAboutData";
+import { whoWeAre } from "@/company_data/about/whoWeAre";
+import DisplayAboutData from "@/app/about/components/DisplayData";
 import Image from "next/image";
 import BaseSection from "../base/BaseSection";
 
@@ -8,7 +8,7 @@ type Props = {
   handleClick: (link: string) => void;
 };
 
-function AboutSection({ handleClick }: Props) {
+function AboutSectionInHomePage({ handleClick }: Props) {
   return (
     <BaseSection title="About US">
       <div className="flex min-h-70 flex-col items-center gap-4 lg:px-8 lg:flex-row lg:items-stretch lg:justify-center">
@@ -27,7 +27,7 @@ function AboutSection({ handleClick }: Props) {
             width={100}
             height={200}
             alt="About Section Photo"
-            src={"/about.png"}
+            src={"/background.png"}
             className="h-full w-full rounded-md object-cover"
           />
         </div>
@@ -36,4 +36,4 @@ function AboutSection({ handleClick }: Props) {
   );
 }
 
-export default AboutSection;
+export default AboutSectionInHomePage;

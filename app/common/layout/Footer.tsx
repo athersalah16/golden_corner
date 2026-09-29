@@ -1,7 +1,8 @@
-import Logo from "@/app/common/Logo";
-import NavLinks from "@/app/common/NavLinks";
-import { contactInfo } from "../company_data/contact/GetInTouch";
-import GetInTouch from "../contact/components/GetInTouch";
+import Logo from "@/app/common/common_components/Logo";
+import NavLinks from "@/app/common/common_components/NavLinks";
+import { contactInfo } from "@/company_data/contact/GetInTouch";
+import GetInTouch from "@/app/contact/components/GetInTouch";
+
 
 function Footer() {
   return (
