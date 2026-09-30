@@ -2,7 +2,6 @@
 
 import { objectives } from "@/company_data/WhyUS/objectives";
 import ContentShowCase from "../common/common_components/ContentShowCase";
-import OrginizationChart from "./components/OrginizationChart";
 import BaseSection from "../common/base/BaseSection";
 import DisplayAboutData from "@/app/about/components/DisplayAboutData";
 
@@ -19,9 +18,7 @@ function page() {
           communities."
         items={objectives}
       />
-      <BaseSection title="Company Organization">
-        <OrginizationChart />
-      </BaseSection>
+    
     </div>
   );
 }
