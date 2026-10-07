@@ -11,6 +11,7 @@ function page() {
       <BaseSection title="About Us">
         <DisplayAboutData />
       </BaseSection>
+      
       <ContentShowCase
         title=" Our Objectives"
         description="   At Golden Corner, our objectives guide our strategy and daily

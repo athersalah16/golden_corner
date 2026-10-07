@@ -3,7 +3,7 @@
 import { navLinks } from "@/company_data/header/navLinks";
 import useExistLink from "@/app/hooks/useExistLink";
 import { NavLinkType } from "@/app/types/header/NavLinkType";
-
+import Link from "next/link";
 
 type Props = { linksStyle: string };
 function NavLinks({ linksStyle }: Props) {
@@ -12,7 +12,7 @@ function NavLinks({ linksStyle }: Props) {
   return (
     <div className={`w-full  ${linksStyle}`}>
       {navLinks.map(({ link, linkName }: NavLinkType, index) => (
-        <a
+        <Link
           href={link}
           key={index + 1}
           className={`
@@ -22,7 +22,7 @@ function NavLinks({ linksStyle }: Props) {
              `}
         >
           {linkName}
-        </a>
+        </Link>
       ))}
     </div>
   );
