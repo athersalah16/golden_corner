@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 export type ContactInfoType = {
-  link: string | undefined;
+  link: string ;
   key: string;
   value: string;
   icon: LucideIcon;
